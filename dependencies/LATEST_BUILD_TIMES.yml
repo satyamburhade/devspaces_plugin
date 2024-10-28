@@ -14290,3 +14290,84 @@
   timeWait: 91 mins
   timeBuild: 5 mins
   timeTotal: 97 mins
+- name: devspaces-imagepuller-rhel8
+  tag: 3.17-3.1729800235
+  taskId: 65404153
+  timeCreate: Thu Oct 24 16:03:55 2024
+  timeStart: Thu Oct 24 16:04:31 2024
+  timeFinish: Thu Oct 24 16:19:19 2024
+  timeWait: 0 mins
+  timeBuild: 14 mins
+  timeTotal: 15 mins
+- name: devspaces-machineexec-rhel8
+  tag: 3.17-4.1729800236
+  taskId: 65404154
+  timeCreate: Thu Oct 24 16:03:56 2024
+  timeStart: Thu Oct 24 16:04:32 2024
+  timeFinish: Thu Oct 24 16:12:34 2024
+  timeWait: 0 mins
+  timeBuild: 8 mins
+  timeTotal: 8 mins
+- name: devspaces-idea-rhel8
+  tag: 3.17-3.1729800237
+  taskId: 65404155
+  timeCreate: Thu Oct 24 16:03:57 2024
+  timeStart: Thu Oct 24 16:04:32 2024
+  timeFinish: Thu Oct 24 16:20:54 2024
+  timeWait: 0 mins
+  timeBuild: 16 mins
+  timeTotal: 16 mins
+- name: devspaces-configbump-rhel8
+  tag: 3.17-3.1729800238
+  taskId: 65404156
+  timeCreate: Thu Oct 24 16:03:58 2024
+  timeStart: Thu Oct 24 16:04:33 2024
+  timeFinish: Thu Oct 24 16:24:03 2024
+  timeWait: 0 mins
+  timeBuild: 19 mins
+  timeTotal: 20 mins
+- name: devspaces-server-rhel8
+  tag: 3.17-6.1729800239
+  taskId: 65404157
+  timeCreate: Thu Oct 24 16:03:59 2024
+  timeStart: Thu Oct 24 16:07:39 2024
+  timeFinish: Thu Oct 24 16:16:19 2024
+  timeWait: 3 mins
+  timeBuild: 8 mins
+  timeTotal: 12 mins
+- name: devspaces-operator
+  tag: 3.17-19.1729800240
+  taskId: 65404158
+  timeCreate: Thu Oct 24 16:04:00 2024
+  timeStart: Thu Oct 24 16:07:40 2024
+  timeFinish: Thu Oct 24 16:34:36 2024
+  timeWait: 3 mins
+  timeBuild: 26 mins
+  timeTotal: 30 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730076984
+  taskId: 65432887
+  timeCreate: Sun Oct 27 20:56:25 2024
+  timeStart: Sun Oct 27 20:56:40 2024
+  timeFinish: Sun Oct 27 21:49:10 2024
+  timeWait: 0 mins
+  timeBuild: 52 mins
+  timeTotal: 52 mins
+- name: devspaces-code-rhel8
+  tag: 3.17-18
+  taskId: 65455315
+  timeCreate: Mon Oct 28 09:38:26 2024
+  timeStart: Mon Oct 28 09:39:07 2024
+  timeFinish: Mon Oct 28 14:29:22 2024
+  timeWait: 0 mins
+  timeBuild: 290 mins
+  timeTotal: 290 mins
+- name: devspaces-operator-bundle
+  tag: 3.17-47
+  taskId: 65465635
+  timeCreate: Mon Oct 28 14:39:03 2024
+  timeStart: Mon Oct 28 14:42:14 2024
+  timeFinish: Mon Oct 28 14:48:17 2024
+  timeWait: 3 mins
+  timeBuild: 6 mins
+  timeTotal: 9 mins
