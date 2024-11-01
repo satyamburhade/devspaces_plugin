@@ -505,11 +505,11 @@
       },
       "3.18": {
         "CSV_VERSION": "3.18.0",
-        "CSV_VERSION_PREV": "3.16.1"
+        "CSV_VERSION_PREV": "3.17.0"
       },
       "3.x": {
         "CSV_VERSION": "3.18.0",
-        "CSV_VERSION_PREV": "3.16.1"
+        "CSV_VERSION_PREV": "3.17.0"
       }
     }
   },
