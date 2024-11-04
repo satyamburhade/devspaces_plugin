@@ -14470,3 +14470,75 @@
   timeWait: 0 mins
   timeBuild: 5 mins
   timeTotal: 6 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730438745
+  taskId: 65616683
+  timeCreate: Fri Nov 1 01:25:45 2024
+  timeStart: Fri Nov 1 01:26:42 2024
+  timeFinish: Fri Nov 1 02:15:43 2024
+  timeWait: 0 mins
+  timeBuild: 49 mins
+  timeTotal: 49 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730438764
+  taskId: 65616685
+  timeCreate: Fri Nov 1 01:26:04 2024
+  timeStart: Fri Nov 1 01:26:43 2024
+  timeFinish: Fri Nov 1 02:17:12 2024
+  timeWait: 0 mins
+  timeBuild: 50 mins
+  timeTotal: 51 mins
+- name: devspaces-udi-rhel8
+  tag: 3.17-6.1730438979
+  taskId: 65616693
+  timeCreate: Fri Nov 1 01:29:40 2024
+  timeStart: Fri Nov 1 01:30:30 2024
+  timeFinish: Fri Nov 1 02:21:02 2024
+  timeWait: 0 mins
+  timeBuild: 50 mins
+  timeTotal: 51 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730479068
+  taskId: 65623674
+  timeCreate: Fri Nov 1 12:37:48 2024
+  timeStart: Fri Nov 1 12:38:36 2024
+  timeFinish: Fri Nov 1 13:48:35 2024
+  timeWait: 0 mins
+  timeBuild: 69 mins
+  timeTotal: 70 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730678705
+  taskId: 65638094
+  timeCreate: Sun Nov 3 19:05:06 2024
+  timeStart: Sun Nov 3 19:05:39 2024
+  timeFinish: Sun Nov 3 19:56:33 2024
+  timeWait: 0 mins
+  timeBuild: 50 mins
+  timeTotal: 51 mins
+- name: devspaces-pluginregistry-rhel8
+  tag: 3.17-10.1730678744
+  taskId: 65638099
+  timeCreate: Sun Nov 3 19:05:44 2024
+  timeStart: Sun Nov 3 19:06:25 2024
+  timeFinish: Sun Nov 3 19:58:54 2024
+  timeWait: 0 mins
+  timeBuild: 52 mins
+  timeTotal: 53 mins
+- name: devspaces-dashboard-rhel8
+  tag: 3.17-23
+  taskId: 65669078
+  timeCreate: Mon Nov 4 10:32:29 2024
+  timeStart: Mon Nov 4 10:32:31 2024
+  timeFinish: Mon Nov 4 11:03:47 2024
+  timeWait: 0 mins
+  timeBuild: 31 mins
+  timeTotal: 31 mins
+- name: devspaces-operator-bundle
+  tag: 3.17-51
+  taskId: 65669474
+  timeCreate: Mon Nov 4 11:15:04 2024
+  timeStart: Mon Nov 4 11:15:37 2024
+  timeFinish: Mon Nov 4 11:21:14 2024
+  timeWait: 0 mins
+  timeBuild: 5 mins
+  timeTotal: 6 mins
