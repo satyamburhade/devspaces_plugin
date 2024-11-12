@@ -261,13 +261,15 @@ php-hello-world \
 python-hello-world \
 quarkus-quickstarts \
 web-nodejs-sample \
-ansible-devspaces-demo \
 "
 
 # create branches for devspaces samples, located under https://github.com/${samplesRepo}/
 for s in $sampleprojects; do
 	pushBranchAndOrTagGH "$s" ${samplesRepo}
 done
+
+# create a branch for ansible-devspaces-demo, located under https://github.com/redhat-developer-demos
+pushBranchAndOrTagGH "ansible-devspaces-demo" "redhat-developer-demos"
 
 # update PNC build-configs, only if performing branching operation (not when tagging)
 if [[ ${SOURCE_BRANCH} ]]; then
