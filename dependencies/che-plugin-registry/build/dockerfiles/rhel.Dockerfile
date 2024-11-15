@@ -87,6 +87,8 @@ RUN \
     rm -rf /build
 
 RUN \
+    mkdir -p /var/run/postgresql && \
+    chmod 777 /var/run/postgresql && \
     # Add UTF-8 for the database
     localedef -f UTF-8 -i en_US en_US.UTF-8 && \
     # set up postgres user
@@ -118,8 +120,7 @@ RUN \
     echo -n "ovsx:  "; /tmp/opt/ovsx/bin/ovsx --version && \
     echo "======================"
 
-RUN chmod 777 /var/run/postgresql && \
-    initdb && \
+RUN initdb && \
     /usr/local/bin/import_vsix.sh && \
     chmod -R 777 /tmp/file && \
     rm /var/lib/pgsql/15/data/database/postmaster.pid && \
