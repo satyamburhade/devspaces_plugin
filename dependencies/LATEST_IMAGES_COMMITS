@@ -14,9 +14,9 @@ quay.io/devspaces/devspaces-rhel8-operator:3.17-20
    Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3365073
   Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-operator/commit?id=516178caca717ca95f43760c7ff58b66b50b460e
 
-quay.io/devspaces/devspaces-operator-bundle:3.17-56
-     NVR: devspaces-operator-bundle-container-3.17-56
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3395832
+quay.io/devspaces/devspaces-operator-bundle:3.17-57
+     NVR: devspaces-operator-bundle-container-3.17-57
+   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3395895
   Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-operator-bundle/commit?id=4d8b4cd09c1a2ee83cf3c0dc42760cc7a878fec9
 
 quay.io/devspaces/dashboard-rhel8:3.17-24
@@ -39,34 +39,10 @@ quay.io/devspaces/machineexec-rhel8:3.17-6
    Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3371943
   Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-machineexec/commit?id=e210ad035b99d6097b4505cea1e2bddfaac17a6e
 
-quay.io/devspaces/pluginregistry-rhel8:3.17-10
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3355399
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730076984
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3363586
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730438745
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3372362
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730438764
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3372361
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730479068
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3372745
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730678705
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3374103
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730678744
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3374105
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730844556
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3377876
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
-     NVR: devspaces-pluginregistry-rhel8-container-3.17-10.1730844591
-   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3377879
-  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=9a9eab9e716566622993cb9a88804113573a0394
+quay.io/devspaces/pluginregistry-rhel8:3.17-11
+     NVR: devspaces-pluginregistry-rhel8-container-3.17-11
+   Build: https://brewweb.engineering.redhat.com/brew/buildinfo?buildID=3390561
+  Source: https://pkgs.devel.redhat.com/cgit/containers/devspaces-pluginregistry/commit?id=c0e83423222e0d38d20cdecd147276d208d4e194
 
 quay.io/devspaces/server-rhel8:3.17-8
      NVR: devspaces-server-rhel8-container-3.17-8
