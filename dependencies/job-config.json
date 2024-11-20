@@ -122,36 +122,6 @@
         "disabled": false
       }
     },
-    "machineexec": {
-      "3.16": {
-        "upstream_branch": [
-          "7.90.x",
-          "main"
-        ],
-        "disabled": true
-      },
-      "3.17": {
-        "upstream_branch": [
-          "7.92.x",
-          "main"
-        ],
-        "disabled": false
-      },
-      "3.18": {
-        "upstream_branch": [
-          "7.94.x",
-          "main"
-        ],
-        "disabled": false
-      },
-      "3.x": {
-        "upstream_branch": [
-          "main",
-          "main"
-        ],
-        "disabled": false
-      }
-    },
     "operator": {
       "3.16": {
         "upstream_branch": [

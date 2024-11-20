@@ -51,7 +51,6 @@ devspaces-dashboard \
 \
 devspaces-idea \
 devspaces-imagepuller \
-devspaces-machineexec \
 devspaces-pluginregistry \
 devspaces-server \
 \

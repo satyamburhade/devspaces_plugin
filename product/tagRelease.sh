@@ -223,7 +223,6 @@ if [[ "${pkgs_devel_branch}" ]] && [[ "${CSV_VERSION}" ]]; then
 	devspaces-idea \
 	devspaces-imagepuller \
 	\
-	devspaces-machineexec \
 	devspaces-operator \
 	devspaces-operator-bundle \
 	devspaces-pluginregistry \

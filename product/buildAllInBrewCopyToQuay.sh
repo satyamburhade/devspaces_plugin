@@ -84,7 +84,6 @@ if [[ $PHASES == *"1"* ]]; then
         devspaces-dashboard \
         devspaces-idea \
         devspaces-imagepuller \
-        devspaces-machineexec \
         devspaces-operator \
         devspaces-pluginregistry \
         devspaces-server \
