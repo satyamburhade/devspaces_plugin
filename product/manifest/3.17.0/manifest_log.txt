@@ -1,0 +1,37 @@
+1a. Check out 3rd party language server dependencies builder repo (will collect variables later)
+
+1b. Define list of upstream containers & RPMs pulled into them from https://pkgs.devel.redhat.com/cgit/?q=devspaces 
+
+== devspaces-idea (devspaces-3.17-rhel-8) ==
+
+== devspaces-machineexec (devspaces-3.17-rhel-8) ==
+
+== devspaces-operator-bundle (devspaces-3.17-rhel-8) ==
+
+== devspaces-pluginregistry (devspaces-3.17-rhel-8) ==
+
+== devspaces-server (devspaces-3.17-rhel-8) ==
+
+Short container list (base images only):        /mnt/hudson_workspace/workspace/DS_CI/Releng/get-3rd-party-deps-manifests/3.17.0/manifest-containers-base-images-only.txt
+Long container list (with dockerfile snippets): /mnt/hudson_workspace/workspace/DS_CI/Releng/get-3rd-party-deps-manifests/3.17.0/manifest-containers-binaries-extras.txt
+
+1c. Other than the above, all artifacts used in Red Hat OpenShift Dev Spaces (formerly 
+    Red Hat CodeReady Workspaces) Workspaces are now built in RH Central CI Jenkins:
+https://main-jenkins-csb-crwqe.apps.ocp-c1.prod.psi.redhat.com/
+
+See also latest build architecture diagram & development documentation:
+https://docs.google.com/presentation/d/1R9tr67pDMk3UVUbvN7vBJbJCYGlUsO2ZPcXbdaoOvTs/edit#slide=id.g4ac34a3cdd_0_0
+https://github.com/redhat-developer/devtools-productization/tree/main/codeready-workspaces
+
+6. Collect RPM deps
+
+7. Collect MVN deps
+
+
+8. Collect NPM deps
+
+Short manifest is in file: /mnt/hudson_workspace/workspace/DS_CI/Releng/get-3rd-party-deps-manifests/3.17.0/manifest.txt
+Long log is in file: /mnt/hudson_workspace/workspace/DS_CI/Releng/get-3rd-party-deps-manifests/3.17.0/manifest_log.txt
+
+Overall manifest is in file: /mnt/hudson_workspace/workspace/DS_CI/Releng/get-3rd-party-deps-manifests/3.17.0/manifest-all.txt
+
