@@ -11,7 +11,7 @@
 # Update versions and upstream branches in dependencies/job-config.json and across the DEVSPACES repository
 WORKDIR="$(pwd)"
 JOB_CONFIG="${WORKDIR}/dependencies/job-config.json"
-CHE_OFFSET=58 # DS 3.12 => (12 * 2) + 58 = 82 ==> Che 7.82
+CHE_OFFSET=59 # DS 3.12 => (12 * 2) + 58 = 82 ==> Che 7.82
 DWO_OFFSET=14 # DS 3.12 => DWO 0.26
 COPYRIGHT="#
 # Copyright (c) 2018-$(date +%Y) Red Hat, Inc.
