@@ -15,7 +15,7 @@
 if [[ ! -x /usr/bin/brew ]]; then 
 	echo "Brew is required. Please install brewkoji rpm from one of these repos:";
 	echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-F-27/compose/Everything/x86_64/os/"
-	echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-RHEL-8/compose/BaseOS/\$basearch/os/"
+	echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-rhel-9/compose/BaseOS/\$basearch/os/"
 fi
 
 usage () {
@@ -31,12 +31,12 @@ if [[ $# -lt 1 ]]; then usage; fi
 
 # JOB_BRANCH=3.y
 # # could this be computed from $(git rev-parse --abbrev-ref HEAD) ?
-# DWNSTM_BRANCH="devspaces-${JOB_BRANCH}-rhel-8"
+# DWNSTM_BRANCH="devspaces-${JOB_BRANCH}-rhel-9"
 NUMTAGS=1 # by default show only the latest tag for each container; or show n latest ones
 CONTAINERS=""
 while [[ "$#" -gt 0 ]]; do
   case $1 in
-    '-j') JOB_BRANCH="$2"; DWNSTM_BRANCH="devspaces-${JOB_BRANCH}-rhel-8"; shift 2;; 
+    '-j') JOB_BRANCH="$2"; DWNSTM_BRANCH="devspaces-${JOB_BRANCH}-rhel-9"; shift 2;; 
     '-b') DWNSTM_BRANCH="$2"; shift 2;; 
     '--tag') BASETAG="$2"; shift 2;;
     '--candidatetag') candidateTag="$2"; shift 2;;
@@ -56,7 +56,7 @@ fi
 if [[ -z ${candidateTag} ]] && [[ ${DWNSTM_BRANCH} ]]; then
 	candidateTag="${DWNSTM_BRANCH}-container-candidate"
 elif [[ -z ${candidateTag} ]] && [[ ${BASETAG} ]]; then
-	candidateTag="devspaces-${BASETAG}-rhel-8-container-candidate"
+	candidateTag="devspaces-${BASETAG}-rhel-9-container-candidate"
 else
 	# instead of passing in a value, we'll compute it below from the specified image
 	true
@@ -72,7 +72,7 @@ for d in $CONTAINERS; do
 	TAG=${dd##*:}; # echo $TAG
 	if [[ ! $candidateTag ]]; then
 		# compute BASETAG and use that for candidateTag below, but we're using 
-		candidateTagUsed="devspaces-${TAG%%-*}-rhel-8-container-candidate"
+		candidateTagUsed="devspaces-${TAG%%-*}-rhel-9-container-candidate"
 	else
 		candidateTagUsed="${candidateTag}"
 	fi

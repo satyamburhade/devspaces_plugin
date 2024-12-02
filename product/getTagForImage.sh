@@ -31,7 +31,7 @@ for d in $images; do
     c="";
     c="${d%:*}" # trim off the tag
     c="${c##*/}" # trim repo and org
-    c="${c##*devspaces-3-rhel8-}" # trim devspaces-3-rhel-8 prefix
+    c="${c##*devspaces-3-rhel8-}" # trim devspaces-3-rhel-9 prefix
     c="${c/-rhel8/}"  # trim container midfix
     c="${c##*devspaces-}"  # trim container prefix
     c="${c%%-container-*}"  # trim container suffix

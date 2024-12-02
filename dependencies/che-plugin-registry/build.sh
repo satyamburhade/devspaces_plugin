@@ -151,8 +151,8 @@ prepareOpenvsxPackagingAsset() {
     fi
 
     SCRIPT_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-    if [[ $SCRIPT_BRANCH != "devspaces-3."*"-rhel-8" ]]; then
-        SCRIPT_BRANCH="devspaces-3-rhel-8"
+    if [[ $SCRIPT_BRANCH != "devspaces-3."*"-rhel-9" ]]; then
+        SCRIPT_BRANCH="devspaces-3-rhel-9"
     fi
 
     # save current branch name to the temporary file
@@ -219,8 +219,8 @@ else
     # try to compute branches from currently checked out branch; else fall back to hard coded value
     # where to find redhat-developer/devspaces/${SCRIPTS_BRANCH}/product/getLatestImageTags.sh
     SCRIPTS_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-    if [[ $SCRIPTS_BRANCH != "devspaces-3."*"-rhel-8" ]]; then
-        SCRIPTS_BRANCH="devspaces-3-rhel-8"
+    if [[ $SCRIPTS_BRANCH != "devspaces-3."*"-rhel-9" ]]; then
+        SCRIPTS_BRANCH="devspaces-3-rhel-9"
     fi
     echo "Load https://raw.githubusercontent.com/redhat-developer/devspaces/${SCRIPTS_BRANCH}/dependencies/job-config.json [3]"
     curl -sSLo /tmp/job-config.json https://raw.githubusercontent.com/redhat-developer/devspaces/${SCRIPTS_BRANCH}/dependencies/job-config.json
