@@ -27,7 +27,7 @@ getVersion() {
 		jcjson=dependencies/job-config.json
 	else
 		jcjson=/tmp/job-config.json
-		curl -sSLo $jcjson https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/dependencies/job-config.json
+		curl -sSLo $jcjson https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/dependencies/job-config.json
 	fi
 	VERSION=$(jq -r '.Version' $jcjson)
 }
@@ -36,15 +36,15 @@ getVersion
 
 getDsVersion ()
 {
-	if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-8" ]] && [[ $DWNSTM_BRANCH != "devspaces-3-rhel-8" ]]; then
+	if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-9" ]] && [[ $DWNSTM_BRANCH != "devspaces-3-rhel-9" ]]; then
 		if [[ ${VERSION} != "" ]]; then
-			DWNSTM_BRANCH="devspaces-${VERSION}-rhel-8"
+			DWNSTM_BRANCH="devspaces-${VERSION}-rhel-9"
 		else 
-			DWNSTM_BRANCH="devspaces-3-rhel-8"
+			DWNSTM_BRANCH="devspaces-3-rhel-9"
 			VERSION="3.x"
 		fi
 	else
-		DS_VERSION=${DWNSTM_BRANCH/devspaces-/}; DS_VERSION=${DS_VERSION/-rhel-8/}
+		DS_VERSION=${DWNSTM_BRANCH/devspaces-/}; DS_VERSION=${DS_VERSION/-rhel-9/}
 		if [[ $DS_VERSION == 2 ]] || [[ $DS_VERSION == 3 ]]; then # invalid version
 			if [[ ${VERSION} ]]; then # use version from VERSION file
 				DS_VERSION=${VERSION}
@@ -106,7 +106,7 @@ PUSHTOQUAY=0 # utility method to pull then push to quay
 PUSHTOQUAYTAGS="" # utility method to pull then push to quay (extra tags to push)
 PUSHTOQUAYFORCE=0 # normally, don't repush a tag if it's already in the registry (to avoid re-timestamping it and updating tag history)
 SORTED=0 # if 0, use the order of containers in the DS*_CONTAINERS_* strings above; if 1, sort alphabetically
-latestNext="latest"; if [[ $DS_VERSION == "3.y" ]] || [[ $DWNSTM_BRANCH == "devspaces-3-rhel-8" ]]; then latestNext="next  "; fi
+latestNext="latest"; if [[ $DS_VERSION == "3.y" ]] || [[ $DWNSTM_BRANCH == "devspaces-3-rhel-9" ]]; then latestNext="next  "; fi
 
 # cleanup /tmp files
 cleanup_temp () {
@@ -159,7 +159,7 @@ REGISTRY="https://registry.redhat.io" # or https://brew-pulp-docker01.web.prod.e
 CONTAINERS=""
 while [[ "$#" -gt 0 ]]; do
   case $1 in
-    '-j') DS_VERSION="$2"; DWNSTM_BRANCH="devspaces-${DS_VERSION}-rhel-8"; shift 1;;
+    '-j') DS_VERSION="$2"; DWNSTM_BRANCH="devspaces-${DS_VERSION}-rhel-9"; shift 1;;
     '-b') DWNSTM_BRANCH="$2"; shift 1;; 
     '-c') CONTAINERS="${CONTAINERS} $2"; shift 1;;
     '-x') EXCLUDES="$2"; shift 1;;
@@ -181,7 +181,7 @@ while [[ "$#" -gt 0 ]]; do
 	'--latestNext') latestNext="$2"; shift 1;;
 	# since we have no next or latest tags for IIB images, append an OCP version and arch and filter for those by default
 	'-o')
-		if [[ $DWNSTM_BRANCH != "devspaces-3-rhel-8" ]] || [[ $DS_VERSION != "3.y" ]]; then 
+		if [[ $DWNSTM_BRANCH != "devspaces-3-rhel-9" ]] || [[ $DS_VERSION != "3.y" ]]; then 
 			latestNext="latest-$2-$(uname -m)"
 		else
 			latestNext="next-$2-$(uname -m)"
@@ -285,7 +285,7 @@ if [[ ${SHOWNVR} -eq 1 ]]; then
 	if [[ ! -x /usr/bin/brew ]]; then 
 		echo "Brew is required. Please install brewkoji rpm from one of these repos:";
 		echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-F-27/compose/Everything/x86_64/os/"
-		echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-RHEL-8/compose/BaseOS/\$basearch/os/"
+		echo " * https://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-rhel-9/compose/BaseOS/\$basearch/os/"
 		exit 1
 	fi
 
@@ -320,8 +320,8 @@ if [[ ${SHOWNVR} -eq 1 ]]; then
 			echo $result
 			(( n = n + 1 ))
 			if [[ $ERRATA_NUM ]]; then
-				prodver="RHOSDS-3-RHEL-8"
-				if [[ $DS_VERSION == "2"* ]]; then prodver="CRW-2.0-RHEL-8"; fi
+				prodver="RHOSDS-3-rhel-9"
+				if [[ $DS_VERSION == "2"* ]]; then prodver="CRW-2.0-rhel-9"; fi
 				# see API info in https://github.com/red-hat-storage/errata-tool/tree/master/errata_tool
 				cat <<EOT >> /tmp/errata-container-update-$result
 from errata_tool import Erratum

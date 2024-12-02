@@ -229,15 +229,15 @@
       },
       "3.18": {
         "upstream_branch": [
-          "devspaces-3.18-rhel-8",
-          "devspaces-3.18-rhel-8"
+          "devspaces-3.18-rhel-9",
+          "devspaces-3.18-rhel-9"
         ],
         "disabled": false
       },
       "3.x": {
         "upstream_branch": [
-          "devspaces-3-rhel-8",
-          "devspaces-3-rhel-8"
+          "devspaces-3-rhel-9",
+          "devspaces-3-rhel-9"
         ],
         "disabled": false
       }
@@ -333,15 +333,15 @@
       },
       "3.18": {
         "upstream_branch": [
-          "devspaces-3.18-rhel-8",
-          "devspaces-3.18-rhel-8"
+          "devspaces-3.18-rhel-9",
+          "devspaces-3.18-rhel-9"
         ],
         "disabled": false
       },
       "3.x": {
         "upstream_branch": [
-          "devspaces-3-rhel-8",
-          "devspaces-3-rhel-8"
+          "devspaces-3-rhel-9",
+          "devspaces-3-rhel-9"
         ],
         "disabled": false
       }

@@ -33,7 +33,7 @@ Options:
   -h, --help       Show this help
 
 Example - collect metadata for the current builds in 
-https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-8/dependencies/LATEST_IMAGES_COMMITS:
+https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-9/dependencies/LATEST_IMAGES_COMMITS:
 
     for d in \$(cat /path/to/LATEST_IMAGES_COMMITS | grep Build | sed -r -e "s@.+buildID=@@"); do \\
       $0 -b \$d --append -f /tmp/collectBuildInfo.yml --csv /tmp/collectBuildInfo.csv ; \\

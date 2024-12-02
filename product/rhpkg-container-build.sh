@@ -55,9 +55,9 @@ if [[ ${doRhpkgContainerBuild} -eq 1 ]]; then
       # and no longer need a get-sources.sh script to run rhpkg
       if [[ $SCRATCH_FLAGS ]]; then
         if [[ $JOB_BRANCH == "3.x" ]] || [[ $JOB_BRANCH == "" ]]; then 
-          TARGET_FLAGS="--target devspaces-3-rhel-8-containers-candidate"
+          TARGET_FLAGS="--target devspaces-3-rhel-9-containers-candidate"
         else
-          TARGET_FLAGS="--target devspaces-${JOB_BRANCH}-rhel-8-containers-candidate"
+          TARGET_FLAGS="--target devspaces-${JOB_BRANCH}-rhel-9-containers-candidate"
         fi
       fi
       # invoke a non-cachito-friendly build with a special get-sources.sh
@@ -67,7 +67,7 @@ if [[ ${doRhpkgContainerBuild} -eq 1 ]]; then
       # invoke brew container-build
       # REQUIRE: brewkoji koji-containerbuild
       gitbranch="$(git rev-parse --abbrev-ref HEAD)"
-      if [[ $SCRATCH_FLAGS == "--scratch" ]]; then gitbranch="devspaces-3-rhel-8"; fi
+      if [[ $SCRATCH_FLAGS == "--scratch" ]]; then gitbranch="devspaces-3-rhel-9"; fi
       target=${gitbranch}-containers-candidate
       repo="$(git remote -v | grep origin | head -1 | sed -r -e "s#.+/containers/(.+) \(fetch.+#\1#")"
       sha="$(git rev-parse HEAD)"
@@ -185,7 +185,7 @@ TASK_ID="${TASK_URL##*=}"
 BUILD_DESC=$(echo $REPO_PATH | sed -r \
     -e 's#registry-proxy.engineering.redhat.com/rh-osbs/devspaces-#quay.io/devspaces/#g' \
     -e 's#(quay.io/devspaces/.+-rhel8:[0-9.-]+) *#<a href="https://\1">\1</a> #g' \
-    -e 's#(quay.io/devspaces)/(operator|operator-bundle):([0-9.-]+) *#<a href="https://\1/devspaces-3-rhel-8-\2:\3">\1/devspaces-3-rhel-8-\2:\3</a> #g'
+    -e 's#(quay.io/devspaces)/(operator|operator-bundle):([0-9.-]+) *#<a href="https://\1/devspaces-3-rhel-9-\2:\3">\1/devspaces-3-rhel-9-\2:\3</a> #g'
 )
 BUILD_RESULT="SUCCESS"
 if [[ ${BUILD_DESC} == *"UNKNOWN"* ]]; then BUILD_RESULT="UNSTABLE"; fi

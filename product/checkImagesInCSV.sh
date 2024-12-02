@@ -31,7 +31,7 @@ if [[ -f dependencies/job-config.json ]]; then
 	jcjson=dependencies/job-config.json
 else
 	jcjson=/tmp/job-config.json
-	curl -sSLo $jcjson https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/dependencies/job-config.json
+	curl -sSLo $jcjson https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/dependencies/job-config.json
 fi
 PROD_VER=$(jq -r '.Version' $jcjson)
 # cleanup /tmp files
@@ -61,7 +61,7 @@ To compare latest image in Quay to latest CSV in bundle in latest IIB:
   TAG=$PROD_VER; \\
   IMG=devspaces/dashboard-rhel8; \\
   IMG=devspaces/pluginregistry-rhel8; \\
-  img_quay=\$(${SCRIPTPATH}/getLatestImageTags.sh -b devspaces-\${TAG}-rhel-8 --quay --tag \"\${TAG}-\" -c \${IMG}); echo \$img_quay; \\
+  img_quay=\$(${SCRIPTPATH}/getLatestImageTags.sh -b devspaces-\${TAG}-rhel-9 --quay --tag \"\${TAG}-\" -c \${IMG}); echo \$img_quay; \\
   img_iib=\$(${SCRIPTPATH}/checkImagesInCSV.sh --ds -t \${TAG} -o 4.12 -y -qq -i \${IMG}); echo \$img_iib; \\
   if [[ \$img_quay != \$img_iib ]]; then \\
     ${SCRIPTPATH}/checkImagesInCSV.sh --ds -t \${TAG} -o 4.12 -y -i \${IMG}; \\
@@ -117,7 +117,7 @@ for imageAndTag in $IMAGES; do
     # echo "Found containerTag = ${containerTag}"
 
     if [[ ! -x ${SCRIPTPATH}/containerExtract.sh ]]; then
-        curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/product/containerExtract.sh
+        curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/product/containerExtract.sh
         chmod +x containerExtract.sh
     fi
     rm -fr /tmp/${SOURCE_CONTAINER//\//-}-${containerTag}-*/
