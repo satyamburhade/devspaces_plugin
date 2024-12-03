@@ -240,7 +240,7 @@ if [ "${SKIP_OCI_IMAGE}" != "true" ]; then
     prepareOpenvsxPackagingAsset
 
     echo "Build with $BUILDER $BUILD_COMMAND"
-    IMAGE="${REGISTRY}/${ORGANIZATION}/pluginregistry-rhel8:${TAG}"
+    IMAGE="${REGISTRY}/${ORGANIZATION}/pluginregistry-rhel9:${TAG}"
     # Copy to root directory to behave as if in Brew or devspaces-images
     cp "${DOCKERFILE}" ./builder.Dockerfile
     ${BUILDER} ${BUILD_COMMAND} --progress=plain -t "${IMAGE}" -f ./builder.Dockerfile .
