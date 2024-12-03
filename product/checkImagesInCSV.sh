@@ -59,8 +59,8 @@ Examples:
 
 To compare latest image in Quay to latest CSV in bundle in latest IIB:
   TAG=$PROD_VER; \\
-  IMG=devspaces/dashboard-rhel8; \\
-  IMG=devspaces/pluginregistry-rhel8; \\
+  IMG=devspaces/dashboard-rhel9; \\
+  IMG=devspaces/pluginregistry-rhel9; \\
   img_quay=\$(${SCRIPTPATH}/getLatestImageTags.sh -b devspaces-\${TAG}-rhel-9 --quay --tag \"\${TAG}-\" -c \${IMG}); echo \$img_quay; \\
   img_iib=\$(${SCRIPTPATH}/checkImagesInCSV.sh --ds -t \${TAG} -o 4.12 -y -qq -i \${IMG}); echo \$img_iib; \\
   if [[ \$img_quay != \$img_iib ]]; then \\
@@ -141,9 +141,9 @@ for imageAndTag in $IMAGES; do
               elif [[ $BREW -eq 1 ]]; then # check brew registry
                 # NOTE: could use registry-proxy.engineering.redhat.com/rh-osbs/ instead but that's internal facing, 
                 # where brew.reg is auth'd and public
-                # convert registry.redhat.io/devworkspace/devworkspace-rhel8-operator
+                # convert registry.redhat.io/devworkspace/devworkspace-rhel9-operator
                 # to      brew.registry.redhat.io/rh-osbs/devworkspace-operator
-                related_image=$(echo $related_image | sed -r -e "s#registry.redhat.io/.+/#brew.registry.redhat.io/rh-osbs/#" -e "s#-rhel8##g")
+                related_image=$(echo $related_image | sed -r -e "s#registry.redhat.io/.+/#brew.registry.redhat.io/rh-osbs/#" -e "s#-rhel9##g")
                 jqdump="$(skopeo inspect docker://${related_image} 2>&1)"
                 if [[ $jqdump == *"Labels"* ]]; then 
                     tag=$(echo $jqdump | jq -r '.Labels.url' | sed -r -e "s#.+/images/##")

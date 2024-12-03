@@ -5,8 +5,8 @@
 # $➔ for d in $(ls -1 -d operator-*); do cd $d; { ../buildInBrewCopyToQuay.sh $d; }; cd ..; done
 
 # TODO should we invoke this and commit changes first?
-# /path/to/product/getLatestRPM.sh -s "$(pwd)" -r openshift-clients-4 -u https://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel8/basearch/rhocp/4.7 -a "x86_64 s390x ppc64le" 
-# /path/to/product/getLatestRPM.sh -s "$(pwd)" -r helm-3 -u https://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel8/basearch/ocp-tools/4.7 -a "x86_64 s390x ppc64le" 
+# /path/to/product/getLatestRPM.sh -s "$(pwd)" -r openshift-clients-4 -u https://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel9/basearch/rhocp/4.7 -a "x86_64 s390x ppc64le" 
+# /path/to/product/getLatestRPM.sh -s "$(pwd)" -r helm-3 -u https://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel9/basearch/ocp-tools/4.7 -a "x86_64 s390x ppc64le" 
 
 # try to compute branches from currently checked out branch; else fall back to hard coded value
 # where to find redhat-developer/devspaces/${DWNSTM_BRANCH}/product/getLatestImageTags.sh
@@ -77,7 +77,7 @@ if [[ $brewTaskID ]]; then
   google-chrome "https://brewweb.engineering.redhat.com/brew/taskinfo?taskID=${brewTaskID}"
   brew watch-logs ${brewTaskID} | tee /tmp/${brewTaskID}.txt
 
-  container="devspaces-${IMG}-rhel8"
+  container="devspaces-${IMG}-rhel9"
   if [[ $container == *"operator"* ]]; then container="devspaces-${IMG}"; fi # special case for operator & metadata images
 
   grep -E "registry.access.redhat.com/devspaces/.+/images/${DS_VERSION}-[0-9]+" /tmp/${brewTaskID}.txt | \

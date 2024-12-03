@@ -84,7 +84,7 @@ getContainerFromTaskID () {
 
 getContainerFromBuildID () {
 # brew buildinfo 2203173 | grep Extra | sed -r -e "s@Extra: @@" | yq -r '.image.index.pull[]' | grep -v sha256
-# registry-proxy.engineering.redhat.com/rh-osbs/devspaces-code-rhel8:3.3-6
+# registry-proxy.engineering.redhat.com/rh-osbs/devspaces-code-rhel9:3.3-6
     buildid=$1
     container=$(brew buildinfo $buildid | grep Extra | sed -r -e "s@Extra: @@" | yq -r '.image.index.pull[]' | grep -v sha256 \
         | sed -r -e "s@registry-proxy.engineering.redhat.com/rh-osbs/@@")

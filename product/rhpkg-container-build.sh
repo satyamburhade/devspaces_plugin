@@ -92,8 +92,8 @@ fi
 #      "2.0"
 #  ],
 #  "pull": [
-#      "registry-proxy.engineering.redhat.com/rh-osbs/devspaces-pluginregistry-rhel8@sha256:85c89a1d9e382bebe70f4204f05f06f0fc2b9c76f1c3ca2983c17989b92239fe",
-#      "registry-proxy.engineering.redhat.com/rh-osbs/devspaces-pluginregistry-rhel8:2.0-212"
+#      "registry-proxy.engineering.redhat.com/rh-osbs/devspaces-pluginregistry-rhel9@sha256:85c89a1d9e382bebe70f4204f05f06f0fc2b9c76f1c3ca2983c17989b92239fe",
+#      "registry-proxy.engineering.redhat.com/rh-osbs/devspaces-pluginregistry-rhel9:2.0-212"
 #  ],
 #  "tags": [
 #      "2.0-212"
@@ -123,7 +123,7 @@ if [[ $REPOS ]] && [[ ${VERBOSE} -eq 1 ]]; then echo "[INFO] #2 Console parser s
 # OPTION 2/3
 if [[ ! ${REPOS} ]] || [[ ${REPOS} == " " ]]; then
   # for scratch builds look for this line:
-  # ^ADD Dockerfile-devspaces-server-rhel8-2.0-scratch-89319-20191122035915 /root/buildinfo/Dockerfile-devspaces-server-rhel8-2.0-scratch-89319-20191122035915
+  # ^ADD Dockerfile-devspaces-server-rhel9-2.0-scratch-89319-20191122035915 /root/buildinfo/Dockerfile-devspaces-server-rhel9-2.0-scratch-89319-20191122035915
   echo "REPO_PATH=\"$(grep --text -E "^ADD Dockerfile-devspaces-" "${LOGFILE}" | sed -r -e "s@\[[TZ0123456789.:-]+\]@@" \
     | sed -r -e "s@^ADD Dockerfile-devspaces-(.+) /root/.+@\1@" | sort -u | tr "\n\r" " " )\"" \
     | tee "${WORKSPACE}"/build_desc.txt
@@ -184,7 +184,7 @@ TASK_URL="$(grep --text "Task info: https://brewweb.engineering.redhat.com/brew/
 TASK_ID="${TASK_URL##*=}"
 BUILD_DESC=$(echo $REPO_PATH | sed -r \
     -e 's#registry-proxy.engineering.redhat.com/rh-osbs/devspaces-#quay.io/devspaces/#g' \
-    -e 's#(quay.io/devspaces/.+-rhel8:[0-9.-]+) *#<a href="https://\1">\1</a> #g' \
+    -e 's#(quay.io/devspaces/.+-rhel9:[0-9.-]+) *#<a href="https://\1">\1</a> #g' \
     -e 's#(quay.io/devspaces)/(operator|operator-bundle):([0-9.-]+) *#<a href="https://\1/devspaces-3-rhel-9-\2:\3">\1/devspaces-3-rhel-9-\2:\3</a> #g'
 )
 BUILD_RESULT="SUCCESS"

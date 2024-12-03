@@ -21,8 +21,8 @@ fi
 usage () {
 	echo "
 Usage: for 1 or more containers in quay or Pulp, compute the NVR, Build URL, and Source commit for that build. eg.,
-  $0  quay.io/devspaces/udi-rhel8:3.y-1 quay.io/devspaces/udi-rhel8:3.y-1 ...
-  $0  registry-proxy.engineering.redhat.com/rh-osbs/devspaces-udi-rhel8 -j 3.y -n 2      | show last 2 tags
+  $0  quay.io/devspaces/udi-rhel9:3.y-1 quay.io/devspaces/udi-rhel9:3.y-1 ...
+  $0  registry-proxy.engineering.redhat.com/rh-osbs/devspaces-udi-rhel9 -j 3.y -n 2      | show last 2 tags
 "
 exit
 }
@@ -65,7 +65,7 @@ fi
 for d in $CONTAINERS; do
 	echo
 	echo "$d"
-	d=${d/devspaces-3-rhel8-/} # special case for operator and metadata images
+	d=${d/devspaces-3-rhel9-/} # special case for operator and metadata images
 
 	#strip off the registry and just find the container name
 	dd=${d#*/}
@@ -77,13 +77,13 @@ for d in $CONTAINERS; do
 		candidateTagUsed="${candidateTag}"
 	fi
 
-	CONTNAME=${dd%%:${TAG}}; CONTNAME=${CONTNAME##*/}; CONTNAME=${CONTNAME%%-rhel8}
+	CONTNAME=${dd%%:${TAG}}; CONTNAME=${CONTNAME##*/}; CONTNAME=${CONTNAME%%-rhel9}
 	# echo "Search for $CONTNAME :: $TAG"
-	# echo "  brew list-tagged ${candidateTag} | grep -E \"${CONTNAME}-container|${CONTNAME}-rhel8-container\" | sed -r -e \"s#${candidateTagUsed}.+##\" | sort -V"
+	# echo "  brew list-tagged ${candidateTag} | grep -E \"${CONTNAME}-container|${CONTNAME}-rhel9-container\" | sed -r -e \"s#${candidateTagUsed}.+##\" | sort -V"
 	if [[ $TAG != ${dd} ]]; then
-		NVRs=$(brew list-tagged ${candidateTagUsed} | grep -E "${CONTNAME}-container|${CONTNAME}-rhel8-container" | sed -e "s#${candidateTagUsed}.\+##" | sort -V | grep ${TAG})
+		NVRs=$(brew list-tagged ${candidateTagUsed} | grep -E "${CONTNAME}-container|${CONTNAME}-rhel9-container" | sed -e "s#${candidateTagUsed}.\+##" | sort -V | grep ${TAG})
 	else
-		NVRs=$(brew list-tagged ${candidateTagUsed} | grep -E "${CONTNAME}-container|${CONTNAME}-rhel8-container" | sed -e "s#${candidateTagUsed}.\+##" | sort -Vr | head -${NUMTAGS})
+		NVRs=$(brew list-tagged ${candidateTagUsed} | grep -E "${CONTNAME}-container|${CONTNAME}-rhel9-container" | sed -e "s#${candidateTagUsed}.\+##" | sort -Vr | head -${NUMTAGS})
 	fi
 	for NVR in $NVRs; do
 		echo "     NVR: $NVR"

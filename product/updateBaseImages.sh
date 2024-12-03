@@ -202,7 +202,7 @@ for d in $(find "${WORKDIR}/" -maxdepth "${MAXDEPTH}" -name "${DOCKERFILE}" | so
 		echo "# Checking ${d} ..."
 		# pull latest commits
 		if [[ -d ${d%%/${DOCKERFILE}} ]]; then pushd "${d%%/${DOCKERFILE}}" >/dev/null; pushedIn=1; fi
-		if [[ "${d%/${DOCKERFILE}}" == *"-rhel8" ]]; then
+		if [[ "${d%/${DOCKERFILE}}" == *"-rhel9" ]]; then
 			BRANCHUSED=${SOURCES_BRANCH/rhel-7/rhel-8/rhel-9}
 		else
 			BRANCHUSED=${SOURCES_BRANCH}
