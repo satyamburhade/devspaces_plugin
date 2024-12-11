@@ -5,7 +5,7 @@
   },
   {
     "id": "GitHub.copilot",
-    "download": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot/1.221.1043/vspackage",
+    "download": "https://github.com/satyamburhade/devspaces_plugin/raw/refs/heads/devspaces-3.17-rhel-8/gc.vsix",
     "version": "1.221.1043"
   },
   {
