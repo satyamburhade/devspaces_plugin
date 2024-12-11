@@ -10,7 +10,7 @@
   },
   {
     "id": "GitHub.copilot-chat",
-    "download": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot-chat/0.19.0/vspackage",
+    "download": "https://github.com/satyamburhade/devspaces_plugin/raw/refs/heads/devspaces-3.17-rhel-8/gcc.vsix",
     "version": "0.19.0"
   }
 ]
